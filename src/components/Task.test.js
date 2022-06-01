@@ -2,7 +2,6 @@ import React from 'react'
 
 import Task from './Task';
 import {fireEvent, render, screen} from '@testing-library/react';
-import { wait } from '@testing-library/user-event/dist/utils';
 
 describe('<Task />', () => {
     const completedTask = {
