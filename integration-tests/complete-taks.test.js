@@ -11,14 +11,13 @@ afterAll(async () => {
   await driver.quit();
 });
 
-
 const createTask = async (taskName) => {
-    await driver.wait(until.elementLocated(By.xpath("//input[@placeholder='Enter new task']")), 1000);
-    const input = await driver.findElement(By.xpath("//input[@placeholder='Enter new task']"));
-    await input.clear();
-    await input.sendKeys(taskName + Key.ENTER);
+  await driver.wait(until.elementLocated(By.xpath("//input[@placeholder='Enter new task']")), 1000);
+  const input = await driver.findElement(By.xpath("//input[@placeholder='Enter new task']"));
+  await input.clear();
+  await input.sendKeys(taskName + Key.ENTER);
 
-    await driver.wait(until.elementLocated(By.xpath(`//*[text()='${taskName}']`)), 1000);
+  await driver.wait(until.elementLocated(By.xpath(`//*[text()='${taskName}']`)), 1000);
 };
 
 test('should complete tasks', async  () => {
